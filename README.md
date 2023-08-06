@@ -1,1 +1,1 @@
-# Daily_tracker
+This is Daily Tracker for Solace Training
