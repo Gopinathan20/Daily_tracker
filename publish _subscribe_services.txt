@@ -1,0 +1,43 @@
+1. Use the reference of YouTube[YT] : 
+
+S1 : A new user account is created in Gmail/YT
+	Publisher → Create account service , 
+	Subscriber 
+		- Create new account service
+		- ID Auth service
+		- New Account  login service
+		- New ID login service
+		- Database
+S2 : The user logs in to YOUTUBE using the account
+	Publisher →New user account service ,
+	Subscriber 
+		- ID Auth service
+		- New ID login service
+		- Location services
+		- Timeline services
+		- List services/network service
+		- Notification services
+		- Tag/Hash service
+		- Advertisement service
+		- Database 
+		- Logging
+S3 : Create a subscription service in YT
+	Publisher →Search channel service, 
+	Subscriber 
+		- Subscription service 
+		- Related content service
+		- Database 
+		- Notification services
+S4 : User :: Create a channel
+	Publisher →New channel service, 
+	Subscriber 
+		- Location services
+		- Timeline services
+		- Database 
+S5 :: user --> channel --> uploads a video
+	Publisher →Upload video service, 
+	Subscriber
+		- Tag/Hash service
+		- Advertisement service
+		- Database
+		- Recommended video service

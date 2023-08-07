@@ -1,0 +1,46 @@
+DB Schema
+-->database schema is crucial for creating an efficient, organized, and maintainable database system that accurately represents the data requirements of an application or system.
+--> logical representation of data::shows how the data is organized and the relationship between the tables
+--> contains table, field, views and relation between different keys::primary,secondary
+--> data stored::in files::unstrucured--> makes accessin difficult::solution::structured using db schema
+--> defines a set of guidelines that control the database:: provides information::way of accessing and modifying the data.
+
+What is an endpoint [NOT API endpoints --> Queue endpoint + topic endpoint]
+
+ An endpoint refers to a unique address or location within the messaging infrastructure where messages can be sent, received, or consumed.
+
+For Queue Endpoints:
+
+In the case of message queues, a queue endpoint represents a destination where messages are placed by producers and retrieved by consumers. Each queue has a distinct endpoint associated with it. Consumers can connect to this endpoint to receive and process messages in the order they were added to the queue.
+
+For Topic Endpoints:
+
+In publish-subscribe systems, a topic endpoint is a virtual channel or category to which messages can be published by producers. Consumers (subscribers) interested in specific topics can connect to the corresponding topic endpoint to receive messages related to that topic. Unlike queues, where each message is consumed by a single consumer, topics allow multiple consumers to subscribe to the same topic and receive copies of the published messages.
+
+What is High Availability Architecture?
+
+-->High Availability (HA) architecture is an approach to designing and implementing systems that ensure a high level of operational continuity, even in the face of hardware failures, software glitches, network issues, or other types of disruptions.
+
+Availability Levels	Maximum Downtime per Year	Downtime per Day
+One nine (90%)	            36.5 days	                   2.4 hours
+Two nines (99%)	            3.65 days	                   14 minutes
+Three nines (99.9%)	    8.76 hours	                   86 seconds
+Four nines (99.99%)	    52.6 minutes	           8.6 seconds
+Five nines (99.999%)	    5.25 minutes	           0.86 seconds
+Six nines (99.9999%)	    31.5 seconds		   8.6 milliseconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
