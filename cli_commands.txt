@@ -1,0 +1,254 @@
+CLI commands: 
+
+→ dir (show directory) 
+→ cd logs (change directory to logs)
+→ dir (show directory) 
+→ enable (Privileged EXEC) 
+→ config (configure EXEC)
+→ ?? (help)
+→ exit (back one level)
+→ admin (admin EXEC)
+→ ?? (help)
+→ exit (back one level)
+→ ?? (help)
+→ home (back to root)
+
+
+developer-production-q1ltkz0tkmp-solace-primary-0> dir
+drwxr-xr-x  appuser    10002       21 Aug 04 11:01 certs
+drwxr-xr-x  appuser    10002        6 Aug 04 11:01 cliscripts
+drwxr-xr-x  appuser    10002       39 Aug 04 11:01 configs
+drwxrwxr-x     root    10002     4096 Aug 09 00:10 cores
+drwxr-xr-x  appuser    10002        6 Aug 04 11:01 keytabs
+drwxr-xr-x  appuser    10002       95 Aug 04 11:01 logs
+developer-production-q1ltkz0tkmp-solace-primary-0> cd /lo
+<directory>
+developer-production-q1ltkz0tkmp-solace-primary-0> cd /logs
+developer-production-q1ltkz0tkmp-solace-primary-0> dir
+-rw-r--r--  appuser    10002    76374 Aug 09 05:14 command.log
+-rw-r--r--  appuser    10002 16589494 Aug 09 05:14 debug.log
+-rw-r--r--  appuser    10002  1009374 Aug 09 05:12 event.log
+-rw-r--r--  appuser    10002      865 Aug 04 11:01 kernel.log
+-rw-r--r--  appuser    10002   700163 Aug 09 05:12 system.log
+developer-production-q1ltkz0tkmp-solace-primary-0> enable
+developer-production-q1ltkz0tkmp-solace-primary-0# configure
+developer-production-q1ltkz0tkmp-solace-primary-0(configure)# ??
+
+ Commands available in the current mode:
+       [create|no] acl-profile       - Create, modify, or delete a ACL
+                                       Profile.
+
+                                       An ACL Profile controls whether an
+                                       authenticated client is permitted to
+                                       establish a connection with the message
+                                       broker or permitted to publish and
+                                       subscribe to specific topics.
+       [create|no] bridge            - Create, modify, or delete a Bridge.
+
+                                       Bridges can be used to link two Message
+                                       VPNs so that messages published to one
+                                       Message VPN that match the topic
+                                       subscriptions set for the bridge are
+                                       also delivered to the linked Message
+                                       VPN.
+       [create|no] client-username   - Create, modify, or delete a Client
+                                       Username.
+
+                                       A client is only authorized to connect
+                                       to a Message VPN that is associated
+---Press any key to continue, or `q' to quit---
+                                       with a Client Username that the client
+                                       has been assigned.
+       [create|no] distributed-cache - Create, modify, or delete a Distributed
+                                       Cache.
+
+                                       A Distributed Cache is a collection of
+                                       one or more Cache Clusters that belong
+                                       to the same Message VPN. Each Cache
+                                       Cluster in a Distributed Cache is
+                                       configured to subscribe to a different
+                                       set of topics. This effectively divides
+                                       up the configured topic space, to
+                                       provide scaling to very large topic
+                                       spaces or very high cached message
+                                       throughput.
+            jndi                     - Use this command to configure standard
+                                       Java Naming and Directory Interface
+                                       (JNDI) objects Connection Factory,
+                                       Topic, and Queue on the router.
+            message-spool            - Use this command to configure message
+                                       spool parameters for Guaranteed
+                                       Messaging on the router.
+       [create|no] message-vpn       - Create, modify, or delete a Message
+---Press any key to continue, or `q' to quit---
+                                       VPN.
+
+                                       Message VPNs (Virtual Private Networks)
+                                       allow for the segregation of topic
+                                       space and clients. They also group
+                                       clients connecting to a network of
+                                       message brokers, such that messages
+                                       published within a particular group are
+                                       only visible to that group's clients.
+       [create|no] routing           - Enter routing configuration mode
+       [create|no] username          - Use this command to create new Solace
+                                       3200 router CLI or SFTP user accounts,
+                                       or to change passwords on existing user
+                                       accounts. The no version deletes the
+                                       specified user. Deleting a user will
+                                       also cause all SEMP sessions associated
+                                       with the user to be deleted.
+       [no] web-manager              - Use this command to access commands
+                                       related to the web-based broker manager
+                                       UI.
+
+   Global commands available in any mode:
+            cd                     - Use this command to change the current
+---Press any key to continue, or `q' to quit---
+                                     working directory on the router.
+            dir                    - Use this command to list the contents of
+                                     a directory on the router.
+            end                    - Use this command to exit the current
+                                     CONFIG command level of the CLI and
+                                     return to the Privileged EXEC level.
+            exit                   - Use this command to exit the current
+                                     command level of the CLI and return to
+                                     the previous level. From the User EXEC
+                                     level, use it to exit the CLI.
+            help                   - Use this command to display the Help
+                                     facility for the command line interface.
+            home                   - Use this command to exit the current
+                                     command level of the CLI and return to
+                                     the User EXEC level.
+            logout                 - Use this command to log out of a current
+                                     CLI session.
+            more                   - Use this command to display the contents
+                                     of a text file in a directory.
+       [no] paging                 - Use this command to control the output
+                                     page size for show commands. The no
+                                     version disables paging.
+            pwd                    - Use this command to display the present
+---Press any key to continue, or `q' to quit---
+                                     working directory (pwd).
+            show                   - Use this command to display a variety of
+                                     configuration and statistical information
+                                     about the router.
+       [no] strict-column-wrapping - By default, this is enabled.  Use the
+                                     'no' version of this command to allow
+                                     designated columns to be displayed
+                                     without wrapping.  A column may be
+                                     designated to be controlled by this
+                                     setting if it is identified as a column
+                                     where the content would need to be
+                                     frequently cut and pasted.  This is more
+                                     easily performed if the content is not
+                                     wrapped.
+            tree                   - Use this command to show the CLI command
+                                     tree, starting from the current mode.
+
+   Complete help for a command can be displayed by entering:
+         "<command> ?"
+
+   Output of any command can be redirected to overwrite a file using '>':
+         "show version > version.txt"
+
+---Press any key to continue, or `q' to quit---
+   Output of any command can be redirected to append to a file using '>>':
+         "show version >> version.txt"
+
+developer-production-q1ltkz0tkmp-solace-primary-0(configure)# exit
+developer-production-q1ltkz0tkmp-solace-primary-0# admin
+developer-production-q1ltkz0tkmp-solace-primary-0(admin)# ??
+
+ Commands available in the current mode:
+            client            - Enter client admin mode
+            config-sync       - Enter config-sync admin mode
+            distributed-cache - Enter distributed-cache admin mode
+            message-spool     - Enter message spool admin mode
+
+   Global commands available in any mode:
+            cd                     - Use this command to change the current
+                                     working directory on the router.
+            dir                    - Use this command to list the contents of
+                                     a directory on the router.
+            end                    - Use this command to exit the current
+                                     CONFIG command level of the CLI and
+                                     return to the Privileged EXEC level.
+            exit                   - Use this command to exit the current
+                                     command level of the CLI and return to
+                                     the previous level. From the User EXEC
+                                     level, use it to exit the CLI.
+            help                   - Use this command to display the Help
+                                     facility for the command line interface.
+            home                   - Use this command to exit the current
+                                     command level of the CLI and return to
+---Press any key to continue, or `q' to quit---
+                                     the User EXEC level.
+            logout                 - Use this command to log out of a current
+                                     CLI session.
+            more                   - Use this command to display the contents
+                                     of a text file in a directory.
+       [no] paging                 - Use this command to control the output
+                                     page size for show commands. The no
+                                     version disables paging.
+            pwd                    - Use this command to display the present
+                                     working directory (pwd).
+            show                   - Use this command to display a variety of
+                                     configuration and statistical information
+                                     about the router.
+       [no] strict-column-wrapping - By default, this is enabled.  Use the
+                                     'no' version of this command to allow
+                                     designated columns to be displayed
+                                     without wrapping.  A column may be
+                                     designated to be controlled by this
+                                     setting if it is identified as a column
+                                     where the content would need to be
+                                     frequently cut and pasted.  This is more
+                                     easily performed if the content is not
+                                     wrapped.
+---Press any key to continue, or `q' to quit---
+            tree                   - Use this command to show the CLI command
+                                     tree, starting from the current mode.
+
+   Complete help for a command can be displayed by entering:
+         "<command> ?"
+
+   Output of any command can be redirected to overwrite a file using '>':
+         "show version > version.txt"
+
+   Output of any command can be redirected to append to a file using '>>':
+         "show version >> version.txt"
+
+developer-production-q1ltkz0tkmp-solace-primary-0(admin)# exit
+developer-production-q1ltkz0tkmp-solace-primary-0#
+developer-production-q1ltkz0tkmp-solace-primary-0# home
+developer-production-q1ltkz0tkmp-solace-primary-0>
+developer-production-q1ltkz0tkmp-solace-primary-0> show queue *
+
+Flags Legend:
+I - Ingress Admin State (U=Up, D=Down)
+E - Egress  Admin State (U=Up, D=Down)
+A - Access-Type         (E=Exclusive, N=Non-Exclusive)
+S - Selector            (Y=Yes, N=No)
+D - Durability          (D=Durable, N=Non-Durable)
+P - Priority            (Y=Yes, N=No)
+
+Queue Name                     Messages      Spool             Bind Status
+Message VPN                     Spooled  Usage(MB)   HWM (MB) Count I E A S D P
+--------------------------- ----------- ---------- ---------- ----- -----------
+practice01
+testing-sample-01                     0       0.00       0.00     0 U U E N D N
+
+queue01
+testing-sample-01                     3       0.00       0.00     0 U U E N D N
+
+queue2
+testing-sample-01                     0       0.00       0.00     0 U U E N D N
+
+queuecli
+testing-sample-01                     0       0.00       0.00     0 U U E N D N
+---Press any key to continue, or `q' to quit---
+
+developer-production-q1ltkz0tkmp-solace-primary-0>
+
+

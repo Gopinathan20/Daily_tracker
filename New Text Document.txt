@@ -1,0 +1,115 @@
+-->Run :: show session 
+
+
+solace-primary-0(configure/message-spool/queue)# show session
+
+ Session User    From             Login               Idle            Timeout
+-------- ------- ---------------- ------------------- --------------- --------
+*      2 testing 103.48.181.33    2023-08-09 04:23:46 0d 0h 0m 6s     5
+           -samp
+           le-01
+           -admi
+           n
+
+* indicates current session
+
+
+-->Creat a Queue name = practice01
+-->Subscribe to the topic = practice-gopi
+
+
+solace-primary-0> enable
+solace-primary-0# configure
+solace-primary-0(configure)# message-spool message-vpn testing-sample-01
+solace-primary-0(configure/message-spool)# create queue practice01
+solace-primary-0(configure/message-spool/queue)# no shutdown
+solace-primary-0(configure/message-spool/queue)# no shut
+solace-primary-0(configure/message-spool/queue)# max-message-size 50
+solace-primary-0(configure/message-spool/queue)# max-spool-usage 50
+solace-primary-0(configure/message-spool/queue)# permission all consume
+ERROR:  Egress flow must be shutdown prior to changing the permissions
+Command Failed
+
+solace-primary-0(configure/message-spool/queue)# shut
+solace-primary-0(configure/message-spool/queue)# permission all consume
+solace-primary-0(configure/message-spool/queue)# no shut
+solace-primary-0(configure/message-spool/queue)# show queue practice01
+
+Flags Legend:
+I - Ingress Admin State (U=Up, D=Down)
+E - Egress  Admin State (U=Up, D=Down)
+A - Access-Type         (E=Exclusive, N=Non-Exclusive)
+S - Selector            (Y=Yes, N=No)
+D - Durability          (D=Durable, N=Non-Durable)
+P - Priority            (Y=Yes, N=No)
+
+Queue Name                     Messages      Spool             Bind Status
+Message VPN                     Spooled  Usage(MB)   HWM (MB) Count I E A S D P
+--------------------------- ----------- ---------- ---------- ----- -----------
+practice01
+testing-sample-01                     0       0.00       0.00     0 U U E N D N
+
+developer-production-q1ltkz0tkmp-solace-primary-0(configure/message-spool/queue)# show queue practice01 detail
+
+Name                                 : practice01
+Message VPN                          : testing-sample-01
+Durability                           : Durable
+Id                                   : 3
+Admin Ingress                        : Up
+Admin Egress                         : Up
+Access Type                          : Exclusive
+Partition Count                      : 0
+Owner                                :
+Created by mgmt                      : Yes
+All Others Permission                : Consume (1100)
+Quota (MB)                           : 50
+Respect Message Priority             : No
+Respect TTL                          : No
+Max TTL (Seconds)                    : 0 (Disabled)
+Well Known                           : Yes
+Reject Msg to Sender on Discard      : Yes
+  Including When Shutdown            : No
+Bind Time Forwarding Mode            : Store-And-Forward
+Current Messages Spooled             : 0
+Current Spool Usage (MB)             : 0.0000
+High Water Mark (MB)                 : 0.0000
+---Press any key to continue, or `q' to quit---
+Total Delivered Unacked Msgs         : 0
+Max Delivered Unacked Msgs Per Flow  : 10000
+Total Acknowledgments In-Progress    : 0
+Redelivery                           : Enabled
+  Max Redelivery                     : 0
+  Redelivery Delay                   : Disabled
+    Multiplier                       : 2.00
+    Initial Interval (ms)            : 1000
+    Max Interval (ms)                : 64000
+Delivery Count Enabled               : No
+Delivery Delay (Seconds)             : 0
+Consumer Ack Propagation             : Yes
+Reject Low-Priority-Msg              : No
+Reject Low-Priority-Msg Limit        : 0
+Low-Priority-Msg Congestion State    : Disabled
+Oldest Msg Id in Spool               : N/A
+Newest Msg Id in Spool               : N/A
+Max Msg Size Allowed (B)             : 50
+Bind Count                           : 0
+Max Bind Count                       : 1000
+Topic Subscription Count             : 0
+Network Topic                        : #P2P/QUE/practice01
+Egress Selector Present              : No
+---Press any key to continue, or `q' to quit---
+Dead Message Queue                   : #DEAD_MSG_QUEUE
+
+Event Threshold                           Set Value      Clear Value
+---------------------------------- ---------------- ----------------
+Bind count                                 80%(800)         60%(600)
+Spool usage (MB)                            25%(12)           18%(9)
+Reject Low-Priority-Msg Limit                80%(0)           60%(0)
+
+Egress Flows
+
+solace-primary-0(configure/message-spool/queue)# subscription topic practice-gopi
+solace-primary-0(configure/message-spool/queue)#
+
+
+
